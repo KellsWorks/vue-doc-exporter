@@ -6,6 +6,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KellsWorks/vue-doc-download.git"
+  },
   "main": "./dist/vue-doc-download.umd.cjs",
   "module": "./dist/vue-doc-download.js",
   "exports": {
