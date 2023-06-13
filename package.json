@@ -1,6 +1,6 @@
 {
-  "name": "@kellsworks/vue-doc-download",
-  "author": "KellsWorks",
+  "name": "vue-doc-exporter",
+  "author": "Kelvin Chidothi",
   "version": "1.0.1",
   "type": "module",
   "files": ["dist"],
