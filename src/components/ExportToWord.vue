@@ -1,46 +1,50 @@
 <template>
-    <button @click="exportToWord(props.element, props.filaname)">
+    <button @click="exportToWord(element, filename)">
     </button>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 
-import { defineProps } from 'vue';
+import { defineComponent } from 'vue';
 
-const props = defineProps({
-  element: {
-    type: String,
-    required: true
-  },
-  filaname: {
-    type: String,
-    default: 0
-  }
-});
 
-const exportToWord = (element: string, filename: string = "") => {
+export default defineComponent({
+    props: {
+        element: {
+            required: true,
+            type: String
+        },
+        filename: {
+            required: true,
+            type: String
+        }
+    },
+    methods: {
+        exportToWord(element: string, filename: string = "") {
 
-    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+            var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
 
-    var postHtml = "</body></html>";
+            var postHtml = "</body></html>";
 
-    var html = preHtml + document.getElementById(element)?.innerHTML + postHtml;
+            var html = preHtml + document.getElementById(element)?.innerHTML + postHtml;
 
-    var url =
-        "data:application/vnd.ms-word;charset=utf-8," + encodeURIComponent(html);
+            var url =
+                "data:application/vnd.ms-word;charset=utf-8," + encodeURIComponent(html);
 
-    filename = filename ? filename + ".doc" : "document.doc";
+            filename = filename ? filename + ".doc" : "document.doc";
 
-    var downloadLink = document.createElement("a");
+            var downloadLink = document.createElement("a");
 
-    document.body.appendChild(downloadLink);
+            document.body.appendChild(downloadLink);
 
-    downloadLink.href = url;
+            downloadLink.href = url;
 
-    downloadLink.download = filename;
+            downloadLink.download = filename;
 
-    downloadLink.click();
+            downloadLink.click();
 
-    document.body.removeChild(downloadLink);
-}
+            document.body.removeChild(downloadLink);
+        }
+    }
+})
 </script>

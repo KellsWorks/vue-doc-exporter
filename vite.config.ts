@@ -8,8 +8,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "BrianComponentLibrary",
-      fileName: "brian-component-lib",
+      name: "VueDocDownloadLibrary",
+      fileName: "vue-doc-download",
     },
     rollupOptions: {
 
