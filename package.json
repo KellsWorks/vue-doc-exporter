@@ -3,7 +3,9 @@
   "author": "Kelvin Chidothi",
   "version": "1.0.1",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/vue-doc-download.umd.cjs",
   "module": "./dist/vue-doc-download.js",
   "exports": {
@@ -21,7 +23,8 @@
   },
   "dependencies": {
     "@types/node": "^20.3.1",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-doc-exporter": "^1.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

@@ -1,6 +1,6 @@
 <template>
-    <button @click="exportToWord(element, filename)">
-    </button>
+    <div @click="exportToWord(element, filename)">
+    </div>
 </template>
 
 <script lang="ts">

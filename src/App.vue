@@ -1,8 +1,25 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+import { ExportToWord } from 'vue-doc-exporter'
+
+export default defineComponent({
+  components: {
+    ExportToWord
+  },
+  data(){
+    return{
+
+    }
+  }
+})
 </script>
 
 <template>
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto nam, incidunt delectus quibusdam soluta doloremque non itaque facilis voluptatum, libero eligendi alias, assumenda vero blanditiis a nesciunt exercitationem numquam. Sapiente.
+  <div id="lorem">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto nam, incidunt delectus quibusdam soluta doloremque non itaque facilis voluptatum, libero eligendi alias, assumenda vero blanditiis a nesciunt exercitationem numquam. Sapiente.
+  </div>
+  <ExportToWord element="lorem">Some Text</ExportToWord>
 </template>
 
 <style scoped>
