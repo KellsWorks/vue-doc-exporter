@@ -1,8 +1,7 @@
 <template>
     <div>
         <button @click="exportToCsv(element, filename)">
-            Click me please
-    </button>
+        </button>
     </div>
 </template>
 
