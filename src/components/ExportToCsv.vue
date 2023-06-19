@@ -1,6 +1,6 @@
 <template>
     <div v-bind="$attrs">
-      <button @click="exportToCsv(element, filename)"></button>
+      <button @click="exportToCsv(element, filename)">Export</button>
     </div>
   </template>
 
