@@ -2,10 +2,12 @@
 import { defineComponent } from 'vue';
 
 import { ExportToWord } from 'vue-doc-exporter'
+import ExportToCsv from './components/ExportToCsv.vue'
 
 export default defineComponent({
   components: {
-    ExportToWord
+    ExportToWord,
+    ExportToCsv,
   },
   data(){
     return{
@@ -16,10 +18,38 @@ export default defineComponent({
 </script>
 
 <template>
-  <div id="lorem">
+  <div>
+    <div id="lorem">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto nam, incidunt delectus quibusdam soluta doloremque non itaque facilis voluptatum, libero eligendi alias, assumenda vero blanditiis a nesciunt exercitationem numquam. Sapiente.
   </div>
-  <ExportToWord element="lorem">Some Text</ExportToWord>
+  <table class="table-auto" id="exportTable">
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Artist</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+      <td>Malcolm Lockyer</td>
+      <td>1961</td>
+    </tr>
+    <tr>
+      <td>Witchy Woman</td>
+      <td>The Eagles</td>
+      <td>1972</td>
+    </tr>
+    <tr>
+      <td>Shining Star</td>
+      <td>Earth, Wind, and Fire</td>
+      <td>1975</td>
+    </tr>
+  </tbody>
+  </table>
+  <ExportToCsv element="exportTable" filename="filename"/>
+  </div>
 </template>
 
 <style scoped>

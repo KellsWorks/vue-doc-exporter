@@ -1,3 +1,4 @@
 import ExportToWord from "./components/ExportToWord.vue";
+import ExportToCsv from "./components/ExportToCsv.vue";
 
-export { ExportToWord }
+export { ExportToWord, ExportToCsv }
