@@ -1,5 +1,5 @@
 
-# Vue Doc Exporter
+# Vue 3 Doc Exporter
 
 Export your vue html content to Word Document with a button Click! PDF & Excel Coming Soon!
 
@@ -21,4 +21,30 @@ Install vue-doc-exporter with npm or yarn
 ## Features
 
 - Export HTML To Word Document
+
+
+## Usage
+
+```javascript
+
+<template>
+    <div>
+        <div id="export-container">
+            <h3>l will be happily exported!</h3>
+        </div>
+        <ExportToWord element="export-container" filename="document"/>
+    </div>
+</template>
+<script lang="ts">
+
+import { ExportToWord } from 'vue-doc-exporter';
+
+export default{
+    components: {
+        ExportToWord
+    }
+}
+
+</script>
+```
 
