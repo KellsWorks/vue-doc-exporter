@@ -1,7 +1,7 @@
 {
   "name": "vue-doc-exporter",
   "author": "Kelvin Chidothi",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "files": [
     "dist"
