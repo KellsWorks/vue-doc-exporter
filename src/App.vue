@@ -1,8 +1,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { ExportToWord } from 'vue-doc-exporter'
 import ExportToCsv from './components/ExportToCsv.vue'
+import ExportToWord from './components/ExportToWord.vue'
 
 export default defineComponent({
   components: {
@@ -48,9 +48,9 @@ export default defineComponent({
     </tr>
   </tbody>
   </table>
-    <ExportToCsv element="exportTable" filename="filename">
+    <ExportToWord element="exportTable" filename="filename">
       <button>click me</button>
-    </ExportToCsv>
+    </ExportToWord>
   </div>
 </template>
 

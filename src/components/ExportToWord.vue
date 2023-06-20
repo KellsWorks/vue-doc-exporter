@@ -1,5 +1,6 @@
 <template>
-    <div @click="exportToWord(element, filename)">
+    <div ref="exportToWord" @click="exportToWord(element, filename)">
+        <slot></slot>
     </div>
 </template>
 
@@ -17,6 +18,12 @@ export default defineComponent({
         filename: {
             required: true,
             type: String
+        }
+    },
+    mounted() {
+        const exportToWord = this.$refs.exportToWord as any;
+        if (exportToWord) {
+            exportToWord.exportToWord();
         }
     },
     methods: {
