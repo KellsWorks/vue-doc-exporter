@@ -23,7 +23,7 @@ export default defineComponent({
   mounted() {
     const exportToCsv = this.$refs.exportToCsv as any;
     if (exportToCsv) {
-      exportToCsv.exportToCsv();
+      this.exportToCsv(this.element, this.filename);
     }
   },
   methods: {
