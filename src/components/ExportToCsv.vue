@@ -20,12 +20,6 @@ export default defineComponent({
       required: true
     }
   },
-  mounted() {
-    const exportToCsv = this.$refs.exportToCsv as any;
-    if (exportToCsv) {
-      this.exportToCsv(this.element, this.filename);
-    }
-  },
   methods: {
     createSlug(text: string): string {
       const date = new Date();
