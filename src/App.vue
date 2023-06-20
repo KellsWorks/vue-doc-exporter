@@ -48,7 +48,9 @@ export default defineComponent({
     </tr>
   </tbody>
   </table>
-  <ExportToCsv element="exportTable" filename="filename"/>
+    <ExportToCsv element="exportTable" filename="filename">
+      <button>click me</button>
+    </ExportToCsv>
   </div>
 </template>
 
