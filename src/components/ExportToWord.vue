@@ -20,12 +20,6 @@ export default defineComponent({
             type: String
         }
     },
-    mounted() {
-        const exportToWord = this.$refs.exportToWord as any;
-        if (exportToWord) {
-            exportToWord.exportToWord();
-        }
-    },
     methods: {
         exportToWord(element: string, filename: string = "") {
 
