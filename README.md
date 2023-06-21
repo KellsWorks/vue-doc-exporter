@@ -1,7 +1,7 @@
 
 # Vue Doc Exporter
 
-Export your vue html content to Word, CSV Documents with a button Click
+Export your vue html content to Word Document with a button Click! PDF coming Soon!
 
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
@@ -17,11 +17,12 @@ Install vue-doc-exporter with npm or yarn
   npm install vue-doc-exporter
   yarn add vue-doc-exporter
 ```
-    
+
 ## Features
 
 - Export HTML Content To Word Document
 - Export HTML Table To CSV file
+- Export HTML Table To Excel file
 
 
 ## Usage
@@ -70,6 +71,31 @@ import { ExportToCsv } from 'vue-doc-exporter';
 export default{
     components: {
         ExportToCsv
+    }
+}
+
+</script>
+```
+
+```javascript
+/** for excel file export */
+<template>
+    <div>
+        <table id="exportTable">
+            ...rest of the code
+        </table>
+        <ExportToExcel element="exportTable" filename="document">
+            <button>click here to export</button>
+        </ExportToExcel>
+    </div>
+</template>
+<script lang="ts">
+
+import { ExportToExcel } from 'vue-doc-exporter';
+
+export default{
+    components: {
+        ExportToExcel
     }
 }
 
