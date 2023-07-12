@@ -22,15 +22,13 @@ export default defineComponent({
   },
   methods: {
     createSlug(text: string): string {
-      const date = new Date();
-      const dateString = date.toISOString().slice(0, 10);
       const slug = text
         .trim()
         .toLowerCase()
         .replace(/[\s\W-]+/g, '-')
         .replace(/^-+|-+$/g, '');
 
-      return `${slug}-${dateString}`;
+      return `${slug}`;
     },
     exportToCsv(tableId: string, filename: string): void {
       const table = document.getElementById(tableId);
