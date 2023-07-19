@@ -28,9 +28,7 @@
     </table>
   </div>
   <div>
-    <ExportToExcel element="table" filename="document">
-      <button>click me</button>
-    </ExportToExcel>
+      <button @click="exportTable()">click me</button>
   </div>
 </template>
 
@@ -44,6 +42,11 @@ export default defineComponent({
   },
   data() {
     return {};
+  },
+  methods: {
+    exportTable(){
+      ExportToExcel.methods.exportTableToExcel('table', 'document');
+    }
   }
 });
 </script>
