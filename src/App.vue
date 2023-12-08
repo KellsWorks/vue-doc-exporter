@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table id="table" class="table-auto">
+    <table class="print-container">
       <thead>
         <tr>
           <th>Song</th>
@@ -28,25 +28,22 @@
     </table>
   </div>
   <div>
-      <button @click="exportTable()">click me</button>
+      <ExportToPdf filename="document">
+        <button>click me</button>
+      </ExportToPdf>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ExportToExcel from './components/ExportToExcel.vue';
+import ExportToPdf from './components/ExportToPdf.vue';
 
 export default defineComponent({
   components: {
-    ExportToExcel
+    ExportToPdf
   },
   data() {
     return {};
-  },
-  methods: {
-    exportTable(){
-      ExportToExcel.methods.exportTableToExcel('table', 'document');
-    }
   }
 });
 </script>
