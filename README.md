@@ -1,21 +1,17 @@
 
 # Vue Doc Exporter
 
-Export your vue html content to Word Document with a button Click! PDF coming Soon!
-
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
-
+![enter image description here](https://cdn.iconscout.com/icon/free/png-256/free-export-file-document-doc-produce-execute-interface-13290.png)
+Solution for effortlessly exporting Vue HTML content to various file formats with just a click! This package empowers you to seamlessly convert your Vue.js content into Word, PDF. CSV, and Excel files.
 
 ## Installation
 
-Install vue-doc-exporter with npm or yarn
+Get started by installing `vue-doc-exporter` in your Vue.js project using npm or yarn:
 
 ```bash
-  npm install vue-doc-exporter
-  yarn add vue-doc-exporter
+npm install vue-doc-exporter
+# or
+yarn add vue-doc-exporter
 ```
 
 ## Features
@@ -23,82 +19,11 @@ Install vue-doc-exporter with npm or yarn
 - Export HTML Content To Word Document
 - Export HTML Table To CSV file
 - Export HTML Table To Excel file
-
+- Export HTML Content to PDF *(new feature coming soon)*
 
 ## Usage
 
-```javascript
-/** for word document export */
-<template>
-    <div>
-        <div id="export-container">
-            <h3>l will be happily exported!</h3>
-        </div>
-        <ExportToWord element="export-container" filename="document">
-            <button>click here to export</button>
-        </ExportToWord>
-    </div>
-</template>
-<script lang="ts">
+Documentation on usage is available [here](https://vue-doc-exporter.vercel.app/guide/pdf.html)
 
-import { ExportToWord } from 'vue-doc-exporter';
-
-export default{
-    components: {
-        ExportToWord
-    }
-}
-
-</script>
-```
-
-```javascript
-/** for csv file export */
-<template>
-    <div>
-        <table id="exportTable">
-            ...rest of the code
-        </table>
-        <ExportToCsv element="exportTable" filename="document">
-            <button>click here to export</button>
-        </ExportToCsv>
-    </div>
-</template>
-<script lang="ts">
-
-import { ExportToCsv } from 'vue-doc-exporter';
-
-export default{
-    components: {
-        ExportToCsv
-    }
-}
-
-</script>
-```
-
-```javascript
-/** for excel file export */
-<template>
-    <div>
-        <table id="exportTable">
-            ...rest of the code
-        </table>
-        <ExportToExcel element="exportTable" filename="document">
-            <button>click here to export</button>
-        </ExportToExcel>
-    </div>
-</template>
-<script lang="ts">
-
-import { ExportToExcel } from 'vue-doc-exporter';
-
-export default{
-    components: {
-        ExportToExcel
-    }
-}
-
-</script>
-```
-
+## Issues
+Feel free to open issues with any labels
