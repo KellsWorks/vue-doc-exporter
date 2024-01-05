@@ -23,7 +23,7 @@ yarn add vue-doc-exporter
 
 ## Usage
 
-Documentation on usage is available [here](https://vue-doc-exporter.vercel.app/guide/pdf.html)
+Documentation on usage is available [here](https://vue-doc-exporter.vercel.app)
 
 ## Issues
 Feel free to open issues with any labels
