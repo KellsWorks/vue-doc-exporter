@@ -28,7 +28,7 @@
     </table>
   </div>
   <div>
-      <ExportToPdf filename="document">
+      <ExportToPdf filename="document" :show-page-numbers="true">
         <button>click me</button>
       </ExportToPdf>
   </div>
