@@ -1,51 +1,35 @@
 <template>
-    <div ref="exportToWord" @click="exportToWord(element, filename)">
-        <slot></slot>
-    </div>
+  <div @click="exportToWord(props.element, props.filename)">
+    <slot></slot>
+  </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+const props = defineProps({
+  element: {
+    required: true,
+    type: String,
+  },
+  filename: {
+    required: true,
+    type: String,
+  },
+});
 
-import { defineComponent } from 'vue';
+function exportToWord(element: string, filename = "document") {
+  const printContainer = document.getElementById(element) as HTMLElement;
+  const htmlContent = printContainer.innerHTML;
 
+  const blob = new Blob([htmlContent], { type: "text/html" });
+  const url = URL.createObjectURL(blob);
 
-export default defineComponent({
-    props: {
-        element: {
-            required: true,
-            type: String
-        },
-        filename: {
-            required: true,
-            type: String
-        }
-    },
-    methods: {
-        exportToWord(element: string, filename: string = "") {
+  const downloadLink = document.createElement("a");
+  downloadLink.href = url;
+  downloadLink.download = filename + ".docx";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
 
-            var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
-
-            var postHtml = "</body></html>";
-
-            var html = preHtml + document.getElementById(element)?.innerHTML + postHtml;
-
-            var url =
-                "data:application/vnd.ms-word;charset=utf-8," + encodeURIComponent(html);
-
-            filename = filename ? filename + ".doc" : "document.doc";
-
-            var downloadLink = document.createElement("a");
-
-            document.body.appendChild(downloadLink);
-
-            downloadLink.href = url;
-
-            downloadLink.download = filename;
-
-            downloadLink.click();
-
-            document.body.removeChild(downloadLink);
-        }
-    }
-})
+  URL.revokeObjectURL(url);
+}
 </script>

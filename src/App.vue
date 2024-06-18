@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table class="print-container">
+    <table class="print-container" id="printContainer">
       <thead>
         <tr>
           <th>Song</th>
@@ -28,19 +28,19 @@
     </table>
   </div>
   <div>
-      <ExportToPdf filename="document" :show-page-numbers="true">
+      <ExportToWord filename="document" element="printContainer">
         <button>click me</button>
-      </ExportToPdf>
+      </ExportToWord>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ExportToPdf from './components/ExportToPdf.vue';
+import ExportToWord from './components/ExportToWord.vue';
 
 export default defineComponent({
   components: {
-    ExportToPdf
+    ExportToWord
   },
   data() {
     return {};
