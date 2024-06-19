@@ -31,7 +31,7 @@ export default defineComponent({
 
             const html = table.outerHTML;
             const base64data = btoa(html);
-            const excelMimeType = 'application/vnd.ms-excel';
+            const excelMimeType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
             const dataUri = `data:${excelMimeType};base64,${base64data}`;
 
             const link = document.createElement('a');
