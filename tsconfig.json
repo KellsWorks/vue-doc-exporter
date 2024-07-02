@@ -18,7 +18,7 @@
     "outDir": "dist",
     "declaration": true,
     "paths": {
-      "vue-doc-exporter": ["./node_modules/vue-doc-exporter/dist/index.d.ts"]
+      "vue-doc-exporter": ["./dist/index.d.ts"]
     },
     "types": []
   },
