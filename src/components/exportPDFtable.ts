@@ -103,6 +103,8 @@ const ExportPDFTable = async(
     head: [content.columns],
     body: rows,
     startY: tableStartY,
+    columnWidth: 'wrap',
+    pageBreak: 'auto',
     didDrawPage: (data: { pageNumber: number }) => {
       const pageNumber = data.pageNumber;
       addPageNumber(pageNumber);
