@@ -38,11 +38,11 @@ interface Attribute {
   logoWidth?: number;
 }
 
-export async function ExportPDFTable(
+const ExportPDFTable = async(
   filename: string,
   content: Content,
   attributes?: Attribute
-): Promise<void> {
+): Promise<void> => {
   const pdfDocument = new jsPDF();
   const logoHeight = attributes?.logoHeight || 30;
   const logoWidth = attributes?.logoWidth || 30;
@@ -134,3 +134,6 @@ const convertToBase64 = async (imagePath: string): Promise<string> => {
     throw error;
   }
 };
+
+
+export default ExportPDFTable;
