@@ -23,6 +23,7 @@ export default defineConfig({
           { text: 'Excel', link: '/guide/excel' },
           { text: 'CSV', link: '/guide/csv' },
           { text: 'PDF', link: '/guide/pdf' },
+          { text: 'PDF Table', link: '/guide/tablepdf' },
         ]
       }
     ],
