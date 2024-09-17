@@ -193,6 +193,11 @@
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.7.0.tgz"
   integrity sha512-R2oBf2p/Arc1m+tWmiWbpHBjEcJnHVnv6bsypu4tcKdrYTpDfl1UT9qTyfkIL1iiii5D4WHxUHCg5X0pzqmxFg==
 
+"@types/downloadjs@^1.4.6":
+  version "1.4.6"
+  resolved "https://registry.npmjs.org/@types/downloadjs/-/downloadjs-1.4.6.tgz"
+  integrity sha512-mp3w70vsaiLRT9ix92fmI9Ob2yJAPZm6tShJtofo2uHbN11G2i6a0ApIEjBl/kv3e9V7Pv7jMjk1bUwYWvMHvA==
+
 "@types/hast@^3.0.0":
   version "3.0.3"
   resolved "https://registry.npmjs.org/@types/hast/-/hast-3.0.3.tgz"
@@ -534,6 +539,11 @@ dompurify@^2.2.0:
   version "2.4.7"
   resolved "https://registry.npmjs.org/dompurify/-/dompurify-2.4.7.tgz"
   integrity sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==
+
+downloadjs@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.npmjs.org/downloadjs/-/downloadjs-1.4.7.tgz"
+  integrity sha512-LN1gO7+u9xjU5oEScGFKvXhYf7Y/empUIIEAGBs1LzUq/rg5duiDrkuH5A2lQGd5jfMOb9X9usDa2oVXwJ0U/Q==
 
 entities@^4.4.0:
   version "4.5.0"
