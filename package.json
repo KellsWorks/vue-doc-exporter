@@ -36,7 +36,8 @@
     "jspdf-autotable": "^3.8.2",
     "vitepress": "^1.0.0-rc.31",
     "vue": "^3.2.47",
-    "vue-doc-exporter": "^1.0.3"
+    "vue-doc-exporter": "^1.0.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/downloadjs": "^1.4.6",

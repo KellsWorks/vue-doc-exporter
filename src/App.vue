@@ -28,7 +28,7 @@
     </table>
   </div>
   <div>
-    <ExportJsonExcel :data="[data,data]">
+    <ExportJsonExcel filename="kdje" element="printContainer">
       <button>click me</button>
     </ExportJsonExcel>
   </div>
@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ExportJsonExcel from "./components/ExportJsonExcel.vue"
+import ExportJsonExcel from "./components/ExportToExcel.vue"
 
 export default defineComponent({
   components: { ExportJsonExcel },

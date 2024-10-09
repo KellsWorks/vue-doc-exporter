@@ -1,50 +1,32 @@
 <template>
     <div>
-        <div ref="exportToCsv" @click="exportTableToExcel(element, filename)">
+        <div ref="exportToCsv" @click="exportTableToExcel(props.element, props.filename)">
             <slot></slot>
         </div>
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import * as XLSX from 'xlsx';
 
-export default defineComponent({
-    props: {
-        element: {
-            required: true,
-            type: String
-        },
-        filename: {
-            required: true,
-            type: String
-        }
+const props = defineProps({
+    element: {
+        required: true,
+        type: String
     },
-    methods: {
-        exportTableToExcel(tableId: string, filename: string): void {
-            const table: HTMLTableElement | null = document.getElementById(tableId) as HTMLTableElement;
-
-            if (!table) {
-                console.error(`Table with ID '${tableId}' not found.`);
-                return;
-            }
-
-            const html = table.outerHTML;
-            const base64data = btoa(html);
-            const excelMimeType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-            const dataUri = `data:${excelMimeType};base64,${base64data}`;
-
-            const link = document.createElement('a');
-            link.href = dataUri;
-            link.download = filename;
-            link.target = '_blank';
-            link.style.display = 'none';
-
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
+    filename: {
+        required: true,
+        type: String
     }
-})
+});
+
+const exportTableToExcel = (tableId: string, filename: string): void => {
+    const table: HTMLTableElement | null = document.getElementById(tableId) as HTMLTableElement;
+    if (!table) {
+        console.error(`Table with ID '${tableId}' not found.`);
+        return;
+    }
+    const wb = XLSX.utils.table_to_book(table);
+    XLSX.writeFile(wb, `${filename}.xlsx`);
+}
 </script>
