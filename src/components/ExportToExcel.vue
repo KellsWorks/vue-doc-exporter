@@ -27,6 +27,6 @@ const exportTableToExcel = (tableId: string, filename: string): void => {
         return;
     }
     const wb = XLSX.utils.table_to_book(table);
-    XLSX.writeFile(wb, `${filename}.xlsx`);
+    XLSX.writeFile(wb, `${filename}.xls`);
 }
 </script>
